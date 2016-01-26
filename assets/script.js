@@ -25,10 +25,9 @@ var valueArrow = function(side) {
 };
 
 var clickArrow = function(side) {
-    hoverArrowOut(side);
+    hoverArrowOut();
     n = valueArrow(side);
     changeImage(n);
-    hoverArrowIn(side);
 };
 
 var startAutomaticSlider = function() {
@@ -74,19 +73,19 @@ $( function() {
         resetCounterAutomaticSlider();
     });
 
-    $('#slider-left-arrow').on('mouseenter', function() {
+    $('#slider-left-arrow').on('mouseover', function() {
         hoverArrowIn('left');
     });
 
-    $('#slider-right-arrow').on('mouseenter', function() {
+    $('#slider-right-arrow').on('mouseover', function() {
         hoverArrowIn('right');
     });
 
-    $('#slider-left-arrow').on('mouseleave', function() {
+    $('#slider-left-arrow').on('mouseout', function() {
         hoverArrowOut('left');
     });
 
-    $('#slider-right-arrow').on('mouseleave', function() {
+    $('#slider-right-arrow').on('mouseout', function() {
         hoverArrowOut('right');
     });
 
