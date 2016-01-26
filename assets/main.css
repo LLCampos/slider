@@ -8,7 +8,7 @@ header {
 #slider {
     position: relative;
     display: block;
-    width: 600px;
+    width: 800px;
     height: 400px;
     margin: auto auto;
 }
@@ -49,19 +49,42 @@ header {
     border: 1px solid red;
 }
 
-#slider-screen-0 {
+.mini-image {
+    position: relative;
+    display: inline-block;
+    border-radius: 30%;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin: 5px;
+}
+
+#mini-image-left {
+    float: left;
+}
+
+#mini-image-right {
+    float: right;
+}
+
+.slider-screen-0 {
+    background-size: cover;
     background-image: url("images/bananas.jpg");
 }
 
-#slider-screen-1 {
+.slider-screen-1 {
+    background-size: cover;
     background-image: url("images/dog.jpg");
 }
 
-#slider-screen-2 {
+.slider-screen-2 {
+    background-size: cover;
     background-image: url("images/dragonfly.jpg");
 }
 
-#slider-screen-3 {
+.slider-screen-3 {
+    background-size: cover;
     background-image: url("images/richmond.jpg");
 }
 
@@ -69,7 +92,7 @@ header {
     position: absolute;
     display: inline-block;
     bottom: 20px;
-    left: 250px;
+    left: 350px;
 }
 
 .dot {
@@ -88,4 +111,10 @@ header {
 
 .hidden {
     display: none;
+}
+
+.transparent-white-screen {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
 }
