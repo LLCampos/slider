@@ -24,8 +24,13 @@ var clickArrow = function(side) {
     changeImage(n);
 };
 
-var resetCounterAutomaticSlider = function() {
+var startAutomaticSlider = function() {
+     automaticSlider = setInterval(function() {clickArrow('right');}, 3000);
+};
 
+var resetCounterAutomaticSlider = function() {
+    clearInterval(automaticSlider);
+    startAutomaticSlider();
 };
 
 
@@ -33,18 +38,21 @@ $( function() {
 
     changeImage(currentImage);
 
-    var automaticSlider = setInterval(function() {clickArrow('right');}, 3000);
+    startAutomaticSlider();
 
     $('#dots').on('click','div', function() {
         changeImage($(this).index());
+        resetCounterAutomaticSlider();
     });
 
     $('#slider-left-arrow').on('click', function(event) {
         clickArrow('left');
+        resetCounterAutomaticSlider();
     });
 
     $('#slider-right-arrow').on('click', function(event) {
         clickArrow('right');
+        resetCounterAutomaticSlider();
     });
 
 
