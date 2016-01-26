@@ -25,8 +25,10 @@ var valueArrow = function(side) {
 };
 
 var clickArrow = function(side) {
+    hoverArrowOut(side);
     n = valueArrow(side);
     changeImage(n);
+    hoverArrowIn(side);
 };
 
 var startAutomaticSlider = function() {
@@ -89,16 +91,12 @@ $( function() {
     });
 
     $('#slider-left-arrow').on('click', function(event) {
-        hoverArrowOut('left');
         clickArrow('left');
-        hoverArrowIn('left');
         resetCounterAutomaticSlider();
     });
 
     $('#slider-right-arrow').on('click', function(event) {
-        hoverArrowOut('right');
         clickArrow('right');
-        hoverArrowIn('right');
         resetCounterAutomaticSlider();
     });
 
